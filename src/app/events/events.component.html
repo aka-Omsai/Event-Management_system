@@ -1,0 +1,129 @@
+<app-header></app-header>
+
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search event (either type or name)"
+                [(ngModel)]="eventName" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="searcheventName()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="events"> -->
+<!-- <div class="eventDisplay">
+        <ul class="list-group">
+            <li 
+            class="list-group-item"
+            *ngFor="let event of events; let i=index" 
+            [class.active]="i == currentIndex" 
+            (click)="setActiveEvent(event, i)"
+            >
+                {{ event.eventName }}
+                <br/>
+                {{ event.eventDescription }}
+                <br/>
+                {{ event.eventType }}
+
+                <img src="{{ event.eventPoster }}" alt="">
+            </li>
+        </ul>
+    </div> -->
+
+<!-- </div> -->
+
+<section>
+    <div class="events">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let event of events; let i=index" [class.active]="i == currentIndex"
+                (click)="setActiveEvent(event, i)">
+                <div class="time">
+                    <img src="{{ event.eventPoster }}" alt="">
+
+                </div>
+                <div class="details">
+                    <div class="etitle">
+                        <h2>
+                            {{ event.eventName }}
+                        </h2>
+                    </div>
+                    <div class="desc-box">
+                            <div class="description">
+                                {{ event.eventDescription }}
+                            </div>
+                        <!-- <div class="timeDate">
+                            <i class="fa fa-users" aria-hidden="true"></i> &nbsp;{{ event.organisationName }}
+                            <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;{{ event.eventDate }}
+                            <i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;{{ event.eventTime }}
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{{ event.eventAddress }}
+                        </div> -->
+
+
+
+
+
+
+
+                        <div style="overflow-x: auto;">
+                            <table>
+                                <tr>
+                                    <th>Organizers</th>
+                                    <th>Date</th>
+                                    <th>Time</th>
+                                    <th>Location</th>
+                                </tr>
+                                <tr>
+                                    <td><i class="fa fa-users" aria-hidden="true"></i> &nbsp;{{ event.organisationName
+                                        }}</td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp;{{ event.eventDate }}</td>
+                                    <td><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;{{ event.eventTime }}</td>
+                                    <td><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{{ event.eventAddress }}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+
+
+                        <!-- <table id="eventTable">
+                            <tr>
+                              <th>Organised by</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Address</th>
+                            </tr>
+                            <tr>
+                              <td><i class="fa fa-users" aria-hidden="true"></i> &nbsp;{{ event.organisationName }}</td>
+                              <td><i class="fa fa-calendar" aria-hidden="true"></i>  &nbsp;{{ event.eventDate }}</td>
+                              <td><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;{{ event.eventTime }}</td>
+                              <td><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{{ event.eventAddress }}</td>
+                            </tr>
+
+
+                        </table> -->
+
+
+
+
+                        <!-- 
+                        <button class="button"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;{{ event.organisationName }}</button>
+                        <button class="button button2"><i class="fa fa-calendar" aria-hidden="true"></i>  &nbsp;{{ event.eventDate }}</button>
+                        <button class="button button3"><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp;{{ event.eventTime }}</button>
+                        <button class="button button4"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{{ event.eventAddress }}</button>
+                         -->
+
+
+                    </div>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</section>

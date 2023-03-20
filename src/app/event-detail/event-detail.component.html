@@ -1,0 +1,183 @@
+<div class="details">
+    <div *ngIf="viewMode; else editable">
+        <div *ngIf="currentEvent.id" class="displayDetail">
+            <!-- <h4>Event</h4>
+            <div>
+                <label><strong>Event Name :</strong></label> {{ currentEvent.eventName }}
+            </div>
+            <div>
+                <label><strong>Event Type :</strong></label> {{ currentEvent.eventType }}
+            </div>
+            <div>
+                <label><strong>Organization Name :</strong></label> {{ currentEvent.organisationName }}
+            </div>
+            <div>
+                <label><strong>Event Address :</strong></label> {{ currentEvent.eventAddress }}
+            </div>
+            <div>
+                <label><strong>Event Date :</strong></label> {{ currentEvent.eventDate }}
+            </div>
+            <div>
+                <label><strong>Event Time :</strong></label> {{ currentEvent.eventTime }}
+            </div>
+            <div>
+                <label><strong>Event Poster :</strong></label> {{ currentEvent.eventPoster }}
+            </div>
+            <div>
+                <label><strong>Description:</strong></label>
+                {{ currentEvent.eventDescription }}
+            </div> -->
+
+            <div>
+                <button type="submit" class="moreDetailsBtn"
+                    routerLink="/manage-events/eventsList/{{ currentEvent.id }}">More Details</button>
+            </div>
+        </div>
+
+        <!-- <div *ngIf="!currentEvent.id">
+            <br />
+            <p>Please click on a Event...</p>
+        </div> -->
+    </div>
+
+    <ng-template #editable>
+        <div *ngIf="currentEvent.id" class="edit-form">
+
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form>
+
+                            <div class="row">
+                                <div class="col-50">
+
+                                    <h3>Event</h3>
+                                    <div class="form-group">
+                                        <label for="eventName">Event Name : </label>
+                                        <input type="text" class="form-control" id="eventName"
+                                            [(ngModel)]="currentEvent.eventName" name="eventName" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eventType">Event Type : </label>
+                                        <select required name="eventType" id="eventType" class="form-control" [(ngModel)]="currentEvent.eventType">
+                                            <option value="" disabled selectehidden>choose a event type</option>
+                                            <option value="Cultural">Cultural</option>
+                                            <option value="Sports">Sports</option>
+                                            <option value="WorkShop">WorkShop</option>
+                                            <option value="Tech Talk">Tech Talk</option>
+                                            <option value="Hackathon">Hackathon</option>
+                                            <option value="Co-curricular">Co-curricular</option>
+                                          </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="organisationName">Organization Name : </label>
+                                        <select required name="organisationName" id="organisationName"
+                                            class="form-control" [(ngModel)]="currentEvent.organisationName">
+                                            <option value="" disabled selected hidden>select your organisation name
+                                            </option>
+                                            <option value="SSC">SSC</option>
+                                            <option value="Defense">Defense</option>
+                                            <option value="KLE Drama Club">KLE Drama Club</option>
+                                            <option value="Bits and Bytes">Bits and Bytes</option>
+                                            <option value="GDSC">GDSC</option>
+                                            <option value="UPSC">UPSC</option>
+                                            <option value="KLE Tech Media">KLE Tech Media</option>
+                                            <option value="Higher Studies Club">Higher Studies Club</option>
+                                            <option value="Aero KLE">Aero KLE</option>
+                                            <option value="Motorsports Club">Motorsports Club</option>
+                                            <option value="Literature Club">Literature Club</option>
+                                            <option value="MIB">MIB</option>
+                                            <option value="Kannada Balaga">Kannada Balaga</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="eventAddress">Event Address : </label>
+                                        <select required name="eventAddress" id="eventAddress" class="form-control"
+                                            [(ngModel)]="currentEvent.eventAddress">
+                                            <option value="" disabled selectehidden>choose your event Location</option>
+                                            <option value="BT Auditorium">BT Auditorium</option>
+                                            <option value="MBA Seminar">MBA Seminar</option>
+                                            <option value="Mechanical Circle">Mechanical Circle</option>
+                                            <option value="Civil Amphitheatre">Civil Amphitheatre</option>
+                                            <option value="Quadrangle">Quadrangle</option>
+                                            <option value="Mechanical Seminar Hall">Mechanical Seminar Hall</option>
+                                            <option value="C-Lite library">C-Lite library</option>
+                                            <option value="Lecture Hall Complex">Lecture Hall Complex</option>
+                                            <option value="Deshpande Foundation">Deshpande Foundation</option>
+                                            <option value="Architecture Seminar Hall">Architecture Seminar Hall</option>
+                                            <option value="Gymkhana">Gymkhana</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-50">
+
+                                            <div class="form-group">
+                                                <label for="eventDate">Event Date : </label>
+                                                <input type="date" class="form-control" id="eventDate"
+                                                    [(ngModel)]="currentEvent.eventDate" name="eventDate"
+                                                    [min]="today" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-50">
+
+                                            <div class="form-group">
+                                                <label for="eventTime">Event Time : </label>
+                                                <input type="time" class="form-control" id="eventTime"
+                                                    [(ngModel)]="currentEvent.eventTime" name="eventTime" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="eventPoster">Event Poster : </label>
+                                        <input type="url" class="form-control" id="eventPoster"
+                                            [(ngModel)]="currentEvent.eventPoster" name="eventPoster" />
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-50">
+
+                                    <div class="form-group">
+                                        <label for="eventDescription">Event Description : </label>
+                                        <textarea cols="65" rows="26" id="eventDescription" name="eventDescription"
+                                            class="form-control" [(ngModel)]="currentEvent.eventDescription">
+                                        </textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button class="badge badge-danger mr-2" (click)="deleteEvent()" style="background-color: red;">
+                            Delete
+                        </button>
+
+                        <button type="submit" class="badge badge-success mb-2" (click)="updateEvent()">
+                            Update
+                        </button>
+
+                        <button type="submit" class="badge badge-success mb-2" (click)="goBack()"
+                            style="background-color: #1d1b2a;">
+                            Go Back
+                        </button>
+                        <p>{{ message }}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div *ngIf="!currentEvent.id">
+            <br />
+            <p>Cannot access this Event...</p>
+        </div> -->
+
+    </ng-template>
+
+</div>

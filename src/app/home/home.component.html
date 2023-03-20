@@ -1,0 +1,81 @@
+<app-header></app-header>
+
+<ngb-carousel *ngIf="images">
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img [src]="images[0]" alt="KLE tech day image" />
+		</div>
+
+	</ng-template>
+	<ng-template ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img [src]="images[1]" alt="KLE tech night image" />
+		</div>
+
+	</ng-template>
+
+</ngb-carousel>
+
+	<div class="intro">
+		<h1>Welcome to KLE Tech Event Management Portal</h1>
+		<br />
+		<div class="whatWeDo">
+			<h4><strong>&nbsp;&nbsp;&nbsp;What we do ..</strong>...</h4>
+			<hr id="underline">
+
+			<div class="content">
+				The KLE Tech event management platform is all you need to deliver a seamless event experience, whether
+				it be for departmental events, fun weeks, extracurricular and cultural events, graduate fairs, tech
+				talks, or education conferences. Our comprehensive platform streamlines processes across various
+				departments, automates manual tasks, and increases team productivity without breaking the bank. You can
+				keep track of registration and interact with attendees prior to the event with <br/> <strong><i class="fa fa-university" aria-hidden="true"></i> &nbsp; KLE Tech Event Management</strong>
+			</div>
+
+		</div>
+
+		<div class="weProvide">
+
+			<div class="flip-box box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front title">
+						<h2>Database Management</h2>
+					</div>
+					<div class="flip-box-back description">
+						<h5>Effectively manage events data by allowing event organisers to add, remove, and update event
+							information as well as send invitations to students of different departments</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="flip-box box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front title">
+						<h2>Maximize Attendance</h2>
+					</div>
+					<div class="flip-box-back description">
+						<h5>Maximize attendance by planning, reminding attendees, as well as notify them. By allowing
+							people
+							to
+							sign up and come to the event, you can attract new members</h5>
+					</div>
+				</div>
+			</div>
+
+			<div class="flip-box box">
+				<div class="flip-box-inner">
+					<div class="flip-box-front title">
+						<h2>Engaging<br/>Events</h2>
+					</div>
+					<div class="flip-box-back description">
+						<h5>With the help of our event management platform, you can provide up-to-date event-related
+							information
+							and encourage your attendees to interact with you, the content, and each other</h5>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<app-footer></app-footer>

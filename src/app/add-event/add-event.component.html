@@ -1,0 +1,148 @@
+<!-- <app-header></app-header> -->
+<app-manage-header></app-manage-header>
+
+<div class="addanevent">
+
+  <div class="loginError">
+    <p *ngIf="danger" id="danger">
+      <ngb-alert type="danger">
+        <strong>Add New Event UnSuccessful !</strong> Please check feilds and add valid details to continue
+        Further.
+      </ngb-alert>
+    </p>
+  </div>
+  
+  <div class="submit-form">
+
+    <div *ngIf="!submittedNewEvent">
+
+      <div class="row">
+        <div class="col-75">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-50">
+
+                <!-- <h2>Event Details</h2> -->
+
+                <div class="form-group">
+                  <label for="eventName"><i class="fa fa-etsy" aria-hidden="true"></i>&nbsp;&nbsp;Name : </label>
+                  <input type="text" class="form-control" id="eventName" required [(ngModel)]="event.eventName"
+                    placeholder="Enter your Event Name" name="eventName" />
+                </div>
+
+                <div class="form-group">
+                  <label for="eventType"><i class="fa fa-envelope"></i> &nbsp;Type : </label>
+                  <select required name="eventType" id="eventType" class="form-control" [(ngModel)]="event.eventType">
+                    <option value="" disabled selectehidden>choose a event type</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Sports">Sports</option>
+                    <option value="WorkShop">WorkShop</option>
+                    <option value="Tech Talk">Tech Talk</option>
+                    <option value="Hackathon">Hackathon</option>
+                    <option value="Co-curricular">Co-curricular</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="organisationName"><i class="fa fa-user"></i> &nbsp;Organisation Name</label>
+                  <select required name="organisationName" id="organisationName" class="form-control"
+                    [(ngModel)]="event.organisationName">
+                    <option value="" disabled selected hidden>select your organisation name</option>
+                    <option value="SSC">SSC</option>
+                    <option value="Defense">Defense</option>
+                    <option value="KLE Drama Club">KLE Drama Club</option>
+                    <option value="Bits and Bytes">Bits and Bytes</option>
+                    <option value="GDSC">GDSC</option>
+                    <option value="UPSC">UPSC</option>
+                    <option value="KLE Tech Media">KLE Tech Media</option>
+                    <option value="Higher Studies Club">Higher Studies Club</option>
+                    <option value="Aero KLE">Aero KLE</option>
+                    <option value="Motorsports Club">Motorsports Club</option>
+                    <option value="Literature Club">Literature Club</option>
+                    <option value="MIB">MIB</option>
+                    <option value="Kannada Balaga">Kannada Balaga</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="eventAddress"><i class="fa fa-address-card-o"></i> &nbsp;Location : </label>
+                  <select required name="eventAddress" id="eventAddress" class="form-control"
+                    [(ngModel)]="event.eventAddress">
+                    <option value="" disabled selectehidden>choose your event Location</option>
+                    <option value="BT Auditorium">BT Auditorium</option>
+                    <option value="MBA Seminar">MBA Seminar</option>
+                    <option value="Mechanical Circle">Mechanical Circle</option>
+                    <option value="Civil Amphitheatre">Civil Amphitheatre</option>
+                    <option value="Quadrangle">Quadrangle</option>
+                    <option value="Mechanical Seminar Hall">Mechanical Seminar Hall</option>
+                    <option value="C-Lite library">C-Lite library</option>
+                    <option value="Lecture Hall Complex">Lecture Hall Complex</option>
+                    <option value="Deshpande Foundation">Deshpande Foundation</option>
+                    <option value="Architecture Seminar Hall">Architecture Seminar Hall</option>
+                    <option value="Gymkhana">Gymkhana</option>
+
+                  </select>
+                </div>
+
+                <div class="row">
+                  <div class="col-50">
+
+                    <div class="form-group">
+                      <label for="eventDate"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp;Date :
+                      </label>
+                      <input type="date" class="form-control" id="eventDate" required [(ngModel)]="event.eventDate"
+                        name="eventDate" [min]="today" max="{{maxDate | date:'yyyy-MM-dd'}}" />
+                    </div>
+                  </div>
+
+                  <div class="col-50">
+                    <div class="form-group">
+                      <label for="eventTime"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;&nbsp;Time : </label>
+                      <input type="time" class="form-control" id="eventTime" required [(ngModel)]="event.eventTime"
+                        name="eventTime" />
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-50">
+
+                <div class="poster">
+                  <div class="form-group">
+                    <label for="eventPoster"><i class="fa fa-picture-o" aria-hidden="true"></i>&nbsp;&nbsp;Poster :
+                    </label>
+                    <input type="url" class="form-control" id="eventPoster" required [(ngModel)]="event.eventPoster"
+                      name="eventPoster" placeholder="Paste your Event Poster URL here" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="eventDescription"><i class="fa fa-paragraph"
+                      aria-hidden="true"></i>&nbsp;&nbsp;Description :
+                  </label>
+                  <textarea required cols="65" rows="13" id="eventDescription" name="eventDescription"
+                    placeholder="describe about your event here ...." class="form-control"
+                    [(ngModel)]="event.eventDescription">
+          </textarea>
+                </div>
+              </div>
+
+              <br />
+              <br />
+
+              <button (click)="saveEvent()" class="btn btn-success">ADD EVENT</button>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- <div *ngIf="submittedNewEvent">
+      <h4>Event was added successfully!</h4>
+      <button class="btn btn-success" (click)="newEvent()">Add</button>
+    </div> -->
+      </div>
+    </div>
+
+  </div>

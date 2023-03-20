@@ -1,0 +1,86 @@
+<div class="login">
+
+    <!-- <app-header></app-header> -->
+    <div *ngIf="!submitted" class="loginPage">
+
+        <p *ngIf="warning" id="warning">
+            <ngb-alert type="warning" [dismissible]="false">
+                <strong>Welcome Back Event Organizer !</strong> Please Login to continue Further.
+            </ngb-alert>
+        </p>
+
+        <p *ngIf="danger" id="danger">
+            <ngb-alert type="danger" [dismissible]=false>
+                <strong>Login UnSuccessful !</strong> Please Login with valid credentials to continue Further.
+            </ngb-alert>
+        </p>
+
+
+        <div class="body">
+            <div class="center">
+
+                <div class="panel panel-primary center-box">
+                    <div id="panelheading" class="panel-heading text-center"
+                        style="cursor:pointer; background-color:#FEF9E7;">
+                        <div id="logo" class="customlogo">
+                            <a href="https://www.kletech.ac.in/information/index.html">
+                                <!-- <img src="https://www.kletech.ac.in/information/img/logo.png" alt="logo"> -->
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="panel-body">
+                        <h1 id="signin" style="color:#336699;" innertext="Event Organizer">Event Organizer</h1>
+
+                        <div id="authentication">
+                            <form style="text-align:center;" #loginForm="ngForm" id="credentials">
+                                <div class="form-group">
+                                    <input required ngModel name="username" #username="ngModel" id="username"
+                                        type="text" class="form-control" placeholder="username">
+                                    <!-- <div class="alert alert-danger" *ngIf="username.invalid && username.touched">Username is
+                                required!
+                            </div> -->
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <input required ngModel name="password" #password="ngModel" id="password"
+                                        type="password" class="form-control" placeholder="password">
+                                    <!-- <div class="alert alert-danger" *ngIf="password.invalid && password.touched">Please enter
+                                your
+                                password!
+                            </div> -->
+                                </div>
+                                <br />
+                                <button class="button" (click)="login(loginForm.value)">Login</button>
+
+                                <!-- <p *ngIf="show" id="err">{{err}}</p> -->
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="submitted" class="event-management">
+
+    <!-- <app-header></app-header> -->
+
+    <!-- <app-manage-header></app-manage-header> -->
+
+    <app-my-event-list></app-my-event-list>
+
+</div>
+
+<!-- <div class="col-sm-3">
+            <button style="margin-bottom: 2px;" type="button" class="btn btn-success btn-block" (click)="newEvent()">+ New Event</button>
+            <app-my-event-list ></app-my-event-list>
+        </div>
+        <div class="col-sm-9">
+            <app-event-detail *ngIf="selectedEvent" [event]="selectedEvent"></app-event-detail>
+            <app-event-detail></app-event-detail>
+        </div> -->

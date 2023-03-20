@@ -1,0 +1,237 @@
+.row {
+    margin-top: 50px !important;
+    margin-left: 50px !important;
+    margin: auto;
+}
+
+.input-group {
+    width: 90%;
+    margin-left: 270px;
+}
+
+/* Styling section, giving background
+    image and dimensions */
+section {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling the three events section */
+section .events {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: -100px !important;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* float: right; */
+    /* box-sizing: border-box; */
+}
+
+/* Styling the links of
+the events section */
+section .events ul {
+    position: relative;
+    /* transform: translateY(-50%); */
+    padding: 40px;
+    /* box-sizing: border-box; */
+    border: none;
+    width: 90%;
+    margin: auto;
+    /* margin-top: 120px !important; */
+}
+
+/* Styling the lists of the event section */
+section .events ul li {
+    list-style: none;
+    /* background: #fff; */
+    background: #fff;
+    color: black;
+    /* box-sizing: border-box; */
+    height: 500px;
+    /* bottom: 200px; */
+    border: none;
+    margin-bottom: 50px;
+
+}
+
+/* Styling the time class of events section */
+section .events ul li .time {
+    position: relative;
+    padding: 20px;
+    background: #262626;
+    /* box-sizing: border-box; */
+    border: none;
+    width: 40%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    transition: .5s;
+}
+
+img {
+    width: 92% !important;
+    height: 96% !important;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    /* margin-bottom: auto; */
+}
+
+/* Styling the hover effect
+    of events section */
+section .events ul li:hover .time {
+    background: #e91e63;
+}
+
+/* Styling the details
+class of events section */
+section .events ul li .details {
+    padding: 20px;
+    /* background: #fff; */
+    box-sizing: border-box;
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+/* Styling the header of the
+details class of events section */
+section .events ul li .details h3 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+section .events ul li .details .etitle,
+.desc-box{
+    /* border: 1px solid black; */
+    margin-top: 5px;
+    /* margin-bottom: 50px; */
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    /* border-width: auto; */
+}
+
+section .events ul li .details .desc-box p{
+    margin-bottom: 50px;
+}
+
+section .events ul li .details .desc-box .timeDate{
+    margin-bottom: 30px;
+    position: relative;
+    bottom: 0px;
+}
+
+
+/* Styling the lists of details
+class of events section */
+section .events ul li .details p {
+    position: relative;
+    margin: 30px 10px 15px;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Styling the links of details
+class of events section */
+section .events ul li .details a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1.5px solid #262626;
+    margin-top: 8px;
+    font-size: 18px;
+    transition: .5s;
+}
+
+/* Styling the details class's hover effect */
+section .events ul li .details a:hover {
+    background: #e91e63;
+    color: black;
+    border-color: #e91e63;
+}
+
+.timeDate {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    /* bottom: -10px; */
+}
+
+.details .desc-box .description {
+    margin: 25px 10px 0px 10px;
+    overflow: auto;
+    width: 100%;
+    height: 30vh;
+    content: fill;
+    block-size: fit-content;
+}
+
+
+
+
+/* #eventTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #eventTable td, #eventTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #eventTable tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #eventTable tr:hover {background-color: #ddd;}
+  
+  #eventTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #131313;
+    color: white;
+  }
+
+
+
+
+  .button {
+    background-color: #131313; /* Green */
+    /* border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  } */ 
+
+
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px;
+    position: sticky;
+    text-align: center;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  td {
+    background-color: #f2f2f2;
+    background: transparent;
+  }
+  
+  tr:nth-child(even):hover {background-color: #f2f2f2; cursor: pointer;}
